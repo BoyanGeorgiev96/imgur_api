@@ -24,7 +24,7 @@ module Imgur
       handle_response client.connection.get(url, params, headers)
     end
 
-    def post_request(url, body:, headers: {})
+    def post_request(url, body: {}, headers: {})
       handle_response client.connection.post(url, body, headers)
     end
 

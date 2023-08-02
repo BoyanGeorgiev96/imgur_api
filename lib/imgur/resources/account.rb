@@ -6,7 +6,7 @@ module Imgur
       Account.new get_request("account/#{username}").body
     end
 
-    def block_status
+    def block_status(username:)
       Account.new get_request("https://api.imgur.com/account/v1/#{username}/block").body
     end
 
@@ -15,11 +15,11 @@ module Imgur
     end
 
     def create_block(username:)
-      Account.new post_request("https://api.imgur.com/account/v1/#{username}/block").body
+      Account.new post_request("https://api.imgur.com/account/v1/#{username}/block")
     end
 
     def delete_block(username:)
-      Account.new delete_request("https://api.imgur.com/account/v1/#{username}/block").body
+      Account.new delete_request("https://api.imgur.com/account/v1/#{username}/block")
     end
 
     def my_images
